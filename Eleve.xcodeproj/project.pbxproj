@@ -10,6 +10,7 @@
 		DF2BD74922CA132E00D949CA /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = DF2BD74822CA132E00D949CA /* RxRelay */; };
 		DF2BD74B22CA132E00D949CA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF2BD74A22CA132E00D949CA /* RxSwift */; };
 		DF2BD74D22CA132E00D949CA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DF2BD74C22CA132E00D949CA /* RxCocoa */; };
+		DF2BD74F22CA21AF00D949CA /* ElevatorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2BD74E22CA21AF00D949CA /* ElevatorDetailViewController.swift */; };
 		DF7A658C22C9410100736179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A658B22C9410100736179 /* AppDelegate.swift */; };
 		DF7A658E22C9410100736179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A658D22C9410100736179 /* SceneDelegate.swift */; };
 		DF7A659522C9410200736179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7A659422C9410200736179 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF2BD74E22CA21AF00D949CA /* ElevatorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorDetailViewController.swift; sourceTree = "<group>"; };
 		DF7A658822C9410100736179 /* Eleve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eleve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A658B22C9410100736179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF7A658D22C9410100736179 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				DF9F699E22CA021300819A1D /* MapViewController.swift */,
 				DF9F69A022CA058F00819A1D /* SearchViewController.swift */,
+				DF2BD74E22CA21AF00D949CA /* ElevatorDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				DF9F699F22CA021300819A1D /* MapViewController.swift in Sources */,
 				DF9F699A22C9FF1600819A1D /* Coordinator.swift in Sources */,
 				DF9F699822C9FEC300819A1D /* ApplicationCoordinator.swift in Sources */,
+				DF2BD74F22CA21AF00D949CA /* ElevatorDetailViewController.swift in Sources */,
 				DF7A658C22C9410100736179 /* AppDelegate.swift in Sources */,
 				DF7A658E22C9410100736179 /* SceneDelegate.swift in Sources */,
 			);

@@ -15,6 +15,7 @@ final class MapViewController: UIViewController {
     private let floatingPanel = FloatingPanelController()
     private let mapView = MKMapView()
     private let searchViewController = SearchViewController()
+    private var detailPanel: FloatingPanelController?
     private let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
@@ -41,20 +42,26 @@ final class MapViewController: UIViewController {
         mapView.showsCompass = true
         mapView.showsUserLocation = true
         mapView.showsBuildings = true
+        mapView.delegate = self
+        
+        #if DEBUG
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 50.100474, longitude: 14.393111)
+        mapView.addAnnotation(annotation)
+        #endif
     }
     
     private func setup(searchViewController: SearchViewController) {
         searchViewController.searchBar.delegate = self
-        
     }
     
     private func setup(floatingPanel: FloatingPanelController, searchViewController: SearchViewController) {
         floatingPanel.delegate = self
         floatingPanel.surfaceView.backgroundColor = .clear
         floatingPanel.surfaceView.shadowHidden = false
+        floatingPanel.surfaceView.cornerRadius = 6.0
         floatingPanel.set(contentViewController: searchViewController)
         floatingPanel.track(scrollView: searchViewController.tableView)
-        searchViewController.didMove(toParent: floatingPanel)
         
         floatingPanel.addPanel(toParent: self)
         floatingPanel.move(to: .tip, animated: true)
@@ -163,5 +170,31 @@ extension MapViewController: CLLocationManagerDelegate {
         if let coordinates = manager.location?.coordinate {
             center(coordinates, mapView: mapView)
         }
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//
+//    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        showDetail()
+    }
+    
+    private func showDetail() {
+        self.detailPanel?.removePanelFromParent(animated: true)
+        
+        let detailViewController = ElevatorDetailViewController()
+        
+        self.detailPanel = FloatingPanelController()
+        self.detailPanel?.delegate = self
+        detailPanel?.surfaceView.shadowHidden = false
+        detailPanel?.surfaceView.cornerRadius = 6.0
+        
+        detailPanel?.set(contentViewController: detailViewController)
+        detailPanel?.addPanel(toParent: self, animated: true)
+        
+        floatingPanel.move(to: .tip, animated: false)
     }
 }

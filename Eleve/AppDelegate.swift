@@ -9,14 +9,24 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ApplicationCoordinatorProtocol {
+    
+    var window: UIWindow?
+    var applicationCoordinator: ApplicationCoordinator?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        startCoordinator(window: UIWindow(frame: UIScreen.main.bounds))
         return true
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func startCoordinator(window: UIWindow) {
+        self.applicationCoordinator = ApplicationCoordinator.startApplicationCoordinator(window: window)
+        self.window = window
     }
 }
 

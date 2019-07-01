@@ -9,16 +9,17 @@
 import UIKit
 
 @available(iOS 13.0, *)
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, ApplicationCoordinatorProtocol {
 
     var window: UIWindow?
-
+    var applicationCoordinator: ApplicationCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        let window = (scene as? UIWindowScene)?.windows.first ?? UIWindow(frame: UIScreen.main.bounds)
+        startCoordinator(window: window)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -49,6 +50,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func startCoordinator(window: UIWindow) {
+        self.applicationCoordinator = ApplicationCoordinator.startApplicationCoordinator(window: window)
+        self.window = window
+    }
 }
 

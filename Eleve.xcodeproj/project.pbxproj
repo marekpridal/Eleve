@@ -21,6 +21,12 @@
 		DF9F699C22CA014800819A1D /* ApplicationCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F699B22CA014800819A1D /* ApplicationCoordinatorProtocol.swift */; };
 		DF9F699F22CA021300819A1D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F699E22CA021300819A1D /* MapViewController.swift */; };
 		DF9F69A122CA058F00819A1D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F69A022CA058F00819A1D /* SearchViewController.swift */; };
+		DFBD02E222CA802400244D08 /* ElevatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD02E122CA802400244D08 /* ElevatorModel.swift */; };
+		DFBD02E422CA80E800244D08 /* ElevatorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD02E322CA80E800244D08 /* ElevatorDetailView.swift */; };
+		DFBD02E622CA811D00244D08 /* ElevatorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD02E522CA811D00244D08 /* ElevatorDetailViewModel.swift */; };
+		DFBD02E922CA8A7900244D08 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD02E822CA8A7900244D08 /* RoundedView.swift */; };
+		DFBD02EB22CA97A700244D08 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD02EA22CA97A700244D08 /* CircleView.swift */; };
+		DFBD02ED22CA9F8B00244D08 /* CloseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD02EC22CA9F8B00244D08 /* CloseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +42,12 @@
 		DF9F699B22CA014800819A1D /* ApplicationCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		DF9F699E22CA021300819A1D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DF9F69A022CA058F00819A1D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		DFBD02E122CA802400244D08 /* ElevatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorModel.swift; sourceTree = "<group>"; };
+		DFBD02E322CA80E800244D08 /* ElevatorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorDetailView.swift; sourceTree = "<group>"; };
+		DFBD02E522CA811D00244D08 /* ElevatorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorDetailViewModel.swift; sourceTree = "<group>"; };
+		DFBD02E822CA8A7900244D08 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		DFBD02EA22CA97A700244D08 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		DFBD02EC22CA9F8B00244D08 /* CloseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,8 @@
 		DF7A658A22C9410100736179 /* Eleve */ = {
 			isa = PBXGroup;
 			children = (
+				DFBD02E722CA8A6500244D08 /* View elements */,
+				DFBD02E022CA800B00244D08 /* Model */,
 				DF9F699D22CA01FA00819A1D /* ViewControllers */,
 				DF9F699622C9FEB400819A1D /* Coordinators */,
 				DF7A658B22C9410100736179 /* AppDelegate.swift */,
@@ -99,8 +113,28 @@
 				DF9F699E22CA021300819A1D /* MapViewController.swift */,
 				DF9F69A022CA058F00819A1D /* SearchViewController.swift */,
 				DF2BD74E22CA21AF00D949CA /* ElevatorDetailViewController.swift */,
+				DFBD02E322CA80E800244D08 /* ElevatorDetailView.swift */,
+				DFBD02E522CA811D00244D08 /* ElevatorDetailViewModel.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DFBD02E022CA800B00244D08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFBD02E122CA802400244D08 /* ElevatorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DFBD02E722CA8A6500244D08 /* View elements */ = {
+			isa = PBXGroup;
+			children = (
+				DFBD02E822CA8A7900244D08 /* RoundedView.swift */,
+				DFBD02EA22CA97A700244D08 /* CircleView.swift */,
+				DFBD02EC22CA9F8B00244D08 /* CloseView.swift */,
+			);
+			path = "View elements";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,12 +219,18 @@
 			files = (
 				DF9F699C22CA014800819A1D /* ApplicationCoordinatorProtocol.swift in Sources */,
 				DF9F69A122CA058F00819A1D /* SearchViewController.swift in Sources */,
+				DFBD02E222CA802400244D08 /* ElevatorModel.swift in Sources */,
 				DF9F699F22CA021300819A1D /* MapViewController.swift in Sources */,
 				DF9F699A22C9FF1600819A1D /* Coordinator.swift in Sources */,
+				DFBD02ED22CA9F8B00244D08 /* CloseView.swift in Sources */,
 				DF9F699822C9FEC300819A1D /* ApplicationCoordinator.swift in Sources */,
+				DFBD02E922CA8A7900244D08 /* RoundedView.swift in Sources */,
 				DF2BD74F22CA21AF00D949CA /* ElevatorDetailViewController.swift in Sources */,
+				DFBD02EB22CA97A700244D08 /* CircleView.swift in Sources */,
 				DF7A658C22C9410100736179 /* AppDelegate.swift in Sources */,
 				DF7A658E22C9410100736179 /* SceneDelegate.swift in Sources */,
+				DFBD02E622CA811D00244D08 /* ElevatorDetailViewModel.swift in Sources */,
+				DFBD02E422CA80E800244D08 /* ElevatorDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

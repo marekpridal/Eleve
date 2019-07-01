@@ -10,6 +10,10 @@ import FloatingPanel
 import MapKit
 import UIKit
 
+#if canImport(SwiftUI)
+import SwiftUI
+#endif
+
 final class MapViewController: UIViewController {
     
     private let floatingPanel = FloatingPanelController()
@@ -185,7 +189,11 @@ extension MapViewController: MKMapViewDelegate {
     private func showDetail() {
         self.detailPanel?.removePanelFromParent(animated: true)
         
-        let detailViewController = ElevatorDetailViewController()
+        var detailViewController: UIViewController = ElevatorDetailViewController()
+        
+        if #available(iOS 13, *) {
+            detailViewController = UIHostingController(rootView: ElevatorDetailView(model: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: nil)))
+        }
         
         self.detailPanel = FloatingPanelController()
         self.detailPanel?.delegate = self

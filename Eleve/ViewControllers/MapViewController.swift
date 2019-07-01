@@ -15,6 +15,7 @@ final class MapViewController: UIViewController {
     private let floatingPanel = FloatingPanelController()
     private let mapView = MKMapView()
     private let searchViewController = SearchViewController()
+    private let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,8 @@ final class MapViewController: UIViewController {
         setup(mapView: mapView)
         setup(searchViewController: searchViewController)
         setup(floatingPanel: floatingPanel, searchViewController: searchViewController)
+        
+        getLocation()
     }
     
     private func setup(mapView: MKMapView) {
@@ -33,6 +36,11 @@ final class MapViewController: UIViewController {
             mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
             ])
+        
+        mapView.showsScale = true
+        mapView.showsCompass = true
+        mapView.showsUserLocation = true
+        mapView.showsBuildings = true
     }
     
     private func setup(searchViewController: SearchViewController) {
@@ -48,21 +56,37 @@ final class MapViewController: UIViewController {
         floatingPanel.track(scrollView: searchViewController.tableView)
         searchViewController.didMove(toParent: floatingPanel)
         
-//        view.addSubview(floatingPanel.view)
-//        NSLayoutConstraint.activate([
-//            floatingPanel.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-//            floatingPanel.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-//            floatingPanel.view.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-//            floatingPanel.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-//            ])
-//
-//        addChild(floatingPanel)
-//
-//        floatingPanel.show(animated: true) { [weak self] in
-//            floatingPanel.didMove(toParent: self)
-//        }
-        
         floatingPanel.addPanel(toParent: self)
+        floatingPanel.move(to: .tip, animated: true)
+    }
+    
+    private func center(_ coordinates: CLLocationCoordinate2D, mapView: MKMapView) {
+        mapView.setRegion(MKCoordinateRegion(center: coordinates, latitudinalMeters: CLLocationDistance(integerLiteral: 1000), longitudinalMeters: CLLocationDistance(integerLiteral: 1000)), animated: true)
+    }
+    
+    private func getLocation() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestWhenInUseAuthorization()
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted, .denied:
+                print(#function, "No access")
+                
+            case .authorizedAlways, .authorizedWhenInUse:
+                print(#function, "Access")
+                locationAccessAllowed()
+            @unknown default:
+                break
+            }
+        } else {
+            print("Location services are not enabled")
+        }
+    }
+    
+    private func locationAccessAllowed() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestLocation()
+        locationManager.allowsBackgroundLocationUpdates = false
     }
 }
 
@@ -127,5 +151,17 @@ extension MapViewController: UISearchBarDelegate {
         searchViewController.showHeader()
         searchViewController.tableView.alpha = 1.0
         floatingPanel.move(to: .full, animated: true)
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location error \(error)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let coordinates = manager.location?.coordinate {
+            center(coordinates, mapView: mapView)
+        }
     }
 }

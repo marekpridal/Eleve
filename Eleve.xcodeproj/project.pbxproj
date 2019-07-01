@@ -16,6 +16,7 @@
 		DF9F699A22C9FF1600819A1D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F699922C9FF1600819A1D /* Coordinator.swift */; };
 		DF9F699C22CA014800819A1D /* ApplicationCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F699B22CA014800819A1D /* ApplicationCoordinatorProtocol.swift */; };
 		DF9F699F22CA021300819A1D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F699E22CA021300819A1D /* MapViewController.swift */; };
+		DF9F69A122CA058F00819A1D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F69A022CA058F00819A1D /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		DF9F699922C9FF1600819A1D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DF9F699B22CA014800819A1D /* ApplicationCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		DF9F699E22CA021300819A1D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DF9F69A022CA058F00819A1D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				DF9F699E22CA021300819A1D /* MapViewController.swift */,
+				DF9F69A022CA058F00819A1D /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9F699C22CA014800819A1D /* ApplicationCoordinatorProtocol.swift in Sources */,
+				DF9F69A122CA058F00819A1D /* SearchViewController.swift in Sources */,
 				DF9F699F22CA021300819A1D /* MapViewController.swift in Sources */,
 				DF9F699A22C9FF1600819A1D /* Coordinator.swift in Sources */,
 				DF9F699822C9FEC300819A1D /* ApplicationCoordinator.swift in Sources */,

@@ -26,7 +26,8 @@ final class ApplicationCoordinator: Coordinator {
     func start() {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
-        
+        rootViewController.isNavigationBarHidden = true
+
         showMapView()
     }
     

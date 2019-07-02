@@ -53,7 +53,7 @@ struct ElevatorDetailView : View {
                 })
             }
             .padding(.trailing, 20)
-            ScrollView {
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(1...50) { element in
                         Image(systemName: "selection.pin.in.out")

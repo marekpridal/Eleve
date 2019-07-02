@@ -8,8 +8,15 @@
 
 import FloatingPanel
 import UIKit
+import RxCocoa
+import RxDataSources
+import RxSwift
 
 final class SearchViewController: UIViewController {
+    
+    private let disposeBag = DisposeBag()
+    
+    let viewModel: SearchViewModel
     
     let searchBar = UISearchBar()
     let tableView = UITableView()
@@ -17,8 +24,21 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .systemBackground
+        
         setup(searchBar: searchBar)
         setup(tableView: tableView, searchBar: searchBar)
+        setupDateSources()
+        setupBinding()
+    }
+    
+    init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func hideHeader() {
@@ -29,15 +49,31 @@ final class SearchViewController: UIViewController {
         
     }
     
+    private func setupBinding() {
+        searchBar.rx.text.bind(to: viewModel.searchText).disposed(by: disposeBag)
+        searchBar.rx.cancelButtonClicked.map { _ -> String? in return nil }.bind(to: viewModel.searchText).disposed(by: disposeBag)
+    }
+    
+    private func setupDateSources() {
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(configureCell: { (model, tableView, indexPath, value) -> UITableViewCell in
+            let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+            cell.textLabel?.text = value
+            return cell
+        })
+        
+        viewModel.sectionModel.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+    }
+    
     private func setup(searchBar: UISearchBar) {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(searchBar)
         NSLayoutConstraint.activate([
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 6),
             searchBar.heightAnchor.constraint(equalToConstant: 60)
             ])
+        searchBar.searchBarStyle = .minimal
     }
     
     private func setup(tableView: UITableView, searchBar: UISearchBar) {
@@ -47,7 +83,7 @@ final class SearchViewController: UIViewController {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            searchBar.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 0),
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
             ])
     }

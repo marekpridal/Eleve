@@ -9,16 +9,13 @@
 import FloatingPanel
 import MapKit
 import UIKit
-
-#if canImport(SwiftUI)
 import SwiftUI
-#endif
 
 final class MapViewController: UIViewController {
     
     private let floatingPanel = FloatingPanelController()
     private let mapView = MKMapView()
-    private let searchViewController = SearchViewController()
+    private let searchViewController = SearchViewController(viewModel: SearchViewModel())
     private var detailPanel: FloatingPanelController?
     private let locationManager = CLLocationManager()
 

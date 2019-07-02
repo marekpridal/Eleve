@@ -12,6 +12,8 @@
 		DF2BD74D22CA132E00D949CA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DF2BD74C22CA132E00D949CA /* RxCocoa */; };
 		DF2BD74F22CA21AF00D949CA /* ElevatorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2BD74E22CA21AF00D949CA /* ElevatorDetailViewController.swift */; };
 		DF57F0A422CB3BCB001AFB5E /* ElevatorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57F0A322CB3BCB001AFB5E /* ElevatorStateView.swift */; };
+		DF57F0A722CB488D001AFB5E /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = DF57F0A622CB488D001AFB5E /* Differentiator */; };
+		DF57F0A922CB488D001AFB5E /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = DF57F0A822CB488D001AFB5E /* RxDataSources */; };
 		DF7A658C22C9410100736179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A658B22C9410100736179 /* AppDelegate.swift */; };
 		DF7A658E22C9410100736179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A658D22C9410100736179 /* SceneDelegate.swift */; };
 		DF7A659522C9410200736179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7A659422C9410200736179 /* Assets.xcassets */; };
@@ -58,7 +60,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF2BD74B22CA132E00D949CA /* RxSwift in Frameworks */,
+				DF57F0A722CB488D001AFB5E /* Differentiator in Frameworks */,
 				DF2BD74922CA132E00D949CA /* RxRelay in Frameworks */,
+				DF57F0A922CB488D001AFB5E /* RxDataSources in Frameworks */,
 				DF2BD74D22CA132E00D949CA /* RxCocoa in Frameworks */,
 				DF7A65A322C9437100736179 /* FloatingPanel in Frameworks */,
 			);
@@ -161,6 +165,8 @@
 				DF2BD74822CA132E00D949CA /* RxRelay */,
 				DF2BD74A22CA132E00D949CA /* RxSwift */,
 				DF2BD74C22CA132E00D949CA /* RxCocoa */,
+				DF57F0A622CB488D001AFB5E /* Differentiator */,
+				DF57F0A822CB488D001AFB5E /* RxDataSources */,
 			);
 			productName = Eleve;
 			productReference = DF7A658822C9410100736179 /* Eleve.app */;
@@ -193,6 +199,7 @@
 			packageReferences = (
 				DF7A65A122C9437100736179 /* XCRemoteSwiftPackageReference "FloatingPanel" */,
 				DF2BD74722CA132E00D949CA /* XCRemoteSwiftPackageReference "RxSwift" */,
+				DF57F0A522CB488D001AFB5E /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = DF7A658922C9410100736179 /* Products */;
 			projectDirPath = "";
@@ -438,6 +445,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		DF57F0A522CB488D001AFB5E /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 		DF7A65A122C9437100736179 /* XCRemoteSwiftPackageReference "FloatingPanel" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:SCENEE/FloatingPanel.git";
@@ -463,6 +478,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DF2BD74722CA132E00D949CA /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
+		};
+		DF57F0A622CB488D001AFB5E /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF57F0A522CB488D001AFB5E /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		DF57F0A822CB488D001AFB5E /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF57F0A522CB488D001AFB5E /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 		DF7A65A222C9437100736179 /* FloatingPanel */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -12,7 +12,7 @@ struct ElevatorDetailView : View {
     let model: ElevatorDetailViewModel
     
     var body: some View {
-        VStack() {
+        VStack(alignment: .leading, spacing: 20) {
             HStack() {
                 VStack(alignment: .leading) {
                     Text(model.elevator.name)
@@ -28,8 +28,8 @@ struct ElevatorDetailView : View {
                 }, label: {
                     CloseView()
                 })
-            }
                 .padding()
+            }
             Divider()
             HStack(alignment: VerticalAlignment.bottom) {
                 Button(action: {
@@ -42,18 +42,17 @@ struct ElevatorDetailView : View {
                     Button(action: {
                         print("Button")
                     }, label: {
-                        RoundedView(title: "Navigovat", color: Color("Blue"), icon: Image(systemName: "arrow.up"))
+                        RoundedView(title: "NAVIGATE", color: Color("Blue"), icon: Image(systemName: "arrow.up"))
                     })
                 }
                 Spacer()
                 Button(action: {
                     print("Button")
                 }, label: {
-                    RoundedView(title: "Navigovat", color: Color("Red"), icon: Image(systemName: "arrow.up"))
+                    RoundedView(title: "REPORT", color: Color("Red"), icon: Image(systemName: "arrow.up"))
                 })
             }
-            .padding(Edge.Set.leading, 20)
-            .padding(Edge.Set.trailing, 20)
+            .padding(.trailing, 20)
             ScrollView {
                 HStack {
                     ForEach(1...50) { element in
@@ -62,19 +61,18 @@ struct ElevatorDetailView : View {
                         .background(Rectangle().fill(Color("Blue")).cornerRadius(6))
                     }
                 }
-                .padding(Edge.Set.leading, 20)
             }
-            Text("Stav")
+            Text("STATES")
                 .font(.system(size: 16))
                 .fontWeight(.semibold)
-            ScrollView {
-                VStack {
-                    ForEach(1...50) { element in
-                        Text("\(element)")
-                    }
-                }
+                .padding(.bottom, -10)
+            List(1...50) { element in
+                ElevatorStateView(elevatorState: ElevatorStateView.ElevatorState(working: Bool.random(), direction: "Z / Na nástupiště", lastUpdate: TimeInterval.random(in: 1000...10_000_000)))
+                .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
             }
+            .padding(EdgeInsets(top: 0, leading: -15, bottom: 0, trailing: 0))
         }
+        .padding(EdgeInsets(top: 25, leading: 20, bottom: 0, trailing: 0))
     }
 }
 

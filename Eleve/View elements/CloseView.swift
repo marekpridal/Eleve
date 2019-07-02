@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 13, *)
 struct CloseView : View {
     var body: some View {
         Group() {
@@ -21,7 +20,6 @@ struct CloseView : View {
 }
 
 #if DEBUG
-@available(iOS 13, *)
 struct CloseView_Previews : PreviewProvider {
     static var previews: some View {
         CloseView()

@@ -189,11 +189,7 @@ extension MapViewController: MKMapViewDelegate {
     private func showDetail() {
         self.detailPanel?.removePanelFromParent(animated: true)
         
-        var detailViewController: UIViewController = ElevatorDetailViewController()
-        
-        if #available(iOS 13, *) {
-            detailViewController = UIHostingController(rootView: ElevatorDetailView(model: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: nil)))
-        }
+        let detailViewController: UIViewController = UIHostingController(rootView: ElevatorDetailView(model: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: nil)))
         
         self.detailPanel = FloatingPanelController()
         self.detailPanel?.delegate = self

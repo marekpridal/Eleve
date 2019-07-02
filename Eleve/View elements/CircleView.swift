@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 13, *)
 struct CircleView : View {
     
     let icon: Image
@@ -25,7 +24,6 @@ struct CircleView : View {
 }
 
 #if DEBUG
-@available(iOS 13, *)
 struct CircleView_Previews : PreviewProvider {
     static var previews: some View {
         CircleView(icon: Image(systemName: "star.fill"), color: Color("Orange"))

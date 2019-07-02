@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 13, *)
 struct ElevatorDetailView : View {
     let model: ElevatorDetailViewModel
     
@@ -80,7 +79,6 @@ struct ElevatorDetailView : View {
 }
 
 #if DEBUG
-@available(iOS 13, *)
 struct ElevatorDetailView_Previews : PreviewProvider {
     static var previews: some View {
         ElevatorDetailView(model: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: nil))

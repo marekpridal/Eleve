@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 13, *)
 struct RoundedView : View {
     
     let title: LocalizedStringKey
@@ -32,7 +31,6 @@ struct RoundedView : View {
 }
 
 #if DEBUG
-@available(iOS 13, *)
 struct RoundedButtonView_Previews : PreviewProvider {
     static var previews: some View {
         RoundedView(title: "Navigovat", color: Color("Red"), icon: Image(systemName: "arrow.up"))

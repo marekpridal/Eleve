@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ApplicationCoordinatorPro
     }
 }
 
-@available (iOS 13, *)
 extension AppDelegate {
     // MARK: UISceneSession Lifecycle
     

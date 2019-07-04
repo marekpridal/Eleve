@@ -59,7 +59,8 @@ extension ApplicationCoordinator: MapViewModelDelegate {
     }
     
     func openSettings() {
-        
+        let settings = UIHostingController(rootView: SettingsView(viewModel: SettingsViewModel(delegate: self)))
+        rootViewController.pushViewController(settings, animated: true)
     }
 }
 
@@ -67,4 +68,8 @@ extension ApplicationCoordinator: ReportElevatorViewModelDelegate {
     func dismissReport() {
         rootViewController.dismiss(animated: true, completion: nil)
     }
+}
+
+extension ApplicationCoordinator: SettingsViewModelDelegate {
+    
 }

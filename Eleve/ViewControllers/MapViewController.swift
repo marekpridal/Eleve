@@ -10,10 +10,14 @@ import FloatingPanel
 import MapKit
 import UIKit
 import SwiftUI
+import RxCocoa
+import RxSwift
 
 final class MapViewController: UIViewController {
     
     let viewModel: MapViewModel
+    
+    private let disposeBag = DisposeBag()
     
     private let floatingPanel = FloatingPanelController()
     private let mapView = MKMapView()
@@ -40,6 +44,16 @@ final class MapViewController: UIViewController {
         setup(floatingPanel: floatingPanel, searchViewController: searchViewController)
         
         getLocation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     private func setup(mapView: MKMapView) {
@@ -91,6 +105,13 @@ final class MapViewController: UIViewController {
             avatarView.heightAnchor.constraint(equalToConstant: 28),
             avatarView.widthAnchor.constraint(equalToConstant: 28)
         ])
+        
+        let tapGestureRecognizer = UITapGestureRecognizer()
+        tapGestureRecognizer.rx.event.asDriver().filter { $0.state == .ended }.drive(onNext: { [weak self] _ in
+            self?.viewModel.delegate?.openSettings()
+        })
+        .disposed(by: disposeBag)
+        avatarView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     private func center(_ coordinates: CLLocationCoordinate2D, mapView: MKMapView) {

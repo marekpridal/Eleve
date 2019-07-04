@@ -225,6 +225,10 @@ extension MapViewController: MKMapViewDelegate {
 //
 //    }
     
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        detailPanel?.removePanelFromParent(animated: true)
+    }
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         showDetail()
     }

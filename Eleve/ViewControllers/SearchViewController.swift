@@ -55,9 +55,9 @@ final class SearchViewController: UIViewController {
     }
     
     private func setupDateSources() {
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(configureCell: { (model, tableView, indexPath, value) -> UITableViewCell in
-            let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-            cell.textLabel?.text = value
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(configureCell: { (model, tableView, indexPath, value) -> UIElevatorTableViewCell in
+            let cell = UIElevatorTableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "UIElevatorTableViewCell")
+            cell.setup(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000))
             return cell
         })
         
@@ -68,8 +68,8 @@ final class SearchViewController: UIViewController {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(searchBar)
         NSLayoutConstraint.activate([
-            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 6),
             searchBar.heightAnchor.constraint(equalToConstant: 60)
             ])
@@ -77,6 +77,7 @@ final class SearchViewController: UIViewController {
     }
     
     private func setup(tableView: UITableView, searchBar: UISearchBar) {
+        tableView.register(UIElevatorTableViewCell.self, forCellReuseIdentifier: "UIElevatorTableViewCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         

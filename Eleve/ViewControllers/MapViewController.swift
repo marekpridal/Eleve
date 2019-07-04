@@ -35,9 +35,9 @@ final class MapViewController: UIViewController {
         super.viewDidLoad()
         
         setup(mapView: mapView)
+        setup(avatarView: avatarView)
         setup(searchViewController: searchViewController)
         setup(floatingPanel: floatingPanel, searchViewController: searchViewController)
-        setup(avatarView: avatarView)
         
         getLocation()
     }

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 final class ApplicationCoordinator: Coordinator {
     
@@ -49,7 +50,8 @@ extension ApplicationCoordinator: MapViewModelDelegate {
     }
     
     func report(elevator: ElevatorModel) {
-        // TODO
+        let report = UIHostingController(rootView: ReportElevatorView(viewModel: ReportElevatorViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: self)))        
+        rootViewController.present(UINavigationController(rootViewController: report), animated: true, completion: nil)
     }
     
     func showImageDetail(_ image: UIImage) {
@@ -58,5 +60,11 @@ extension ApplicationCoordinator: MapViewModelDelegate {
     
     func openSettings() {
         
+    }
+}
+
+extension ApplicationCoordinator: ReportElevatorViewModelDelegate {
+    func dismissReport() {
+        rootViewController.dismiss(animated: true, completion: nil)
     }
 }

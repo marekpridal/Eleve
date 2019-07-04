@@ -22,6 +22,9 @@
 		DF7A659522C9410200736179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7A659422C9410200736179 /* Assets.xcassets */; };
 		DF7A659822C9410200736179 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7A659622C9410200736179 /* LaunchScreen.storyboard */; };
 		DF7A65A322C9437100736179 /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = DF7A65A222C9437100736179 /* FloatingPanel */; };
+		DF7B8CE022CE1D4E00D6EF93 /* ReportElevatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B8CDF22CE1D4D00D6EF93 /* ReportElevatorView.swift */; };
+		DF7B8CE222CE1D5B00D6EF93 /* ReportElevatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B8CE122CE1D5B00D6EF93 /* ReportElevatorViewModel.swift */; };
+		DF7B8CE422CE1F7500D6EF93 /* ButtonWithCircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B8CE322CE1F7500D6EF93 /* ButtonWithCircleIcon.swift */; };
 		DF9F699822C9FEC300819A1D /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F699722C9FEC300819A1D /* ApplicationCoordinator.swift */; };
 		DF9F699A22C9FF1600819A1D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F699922C9FF1600819A1D /* Coordinator.swift */; };
 		DF9F699C22CA014800819A1D /* ApplicationCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F699B22CA014800819A1D /* ApplicationCoordinatorProtocol.swift */; };
@@ -47,6 +50,9 @@
 		DF7A659422C9410200736179 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF7A659722C9410200736179 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF7A659922C9410200736179 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF7B8CDF22CE1D4D00D6EF93 /* ReportElevatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportElevatorView.swift; sourceTree = "<group>"; };
+		DF7B8CE122CE1D5B00D6EF93 /* ReportElevatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportElevatorViewModel.swift; sourceTree = "<group>"; };
+		DF7B8CE322CE1F7500D6EF93 /* ButtonWithCircleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithCircleIcon.swift; sourceTree = "<group>"; };
 		DF9F699722C9FEC300819A1D /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		DF9F699922C9FF1600819A1D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DF9F699B22CA014800819A1D /* ApplicationCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorProtocol.swift; sourceTree = "<group>"; };
@@ -138,6 +144,8 @@
 				DFBD02E522CA811D00244D08 /* ElevatorDetailViewModel.swift */,
 				DF57F0AA22CB48BA001AFB5E /* SearchViewModel.swift */,
 				DF5DF3AA22CE15BC0048DD69 /* MapViewModel.swift */,
+				DF7B8CDF22CE1D4D00D6EF93 /* ReportElevatorView.swift */,
+				DF7B8CE122CE1D5B00D6EF93 /* ReportElevatorViewModel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 				DFBD02EA22CA97A700244D08 /* CircleView.swift */,
 				DFBD02EC22CA9F8B00244D08 /* CloseView.swift */,
 				DF57F0A322CB3BCB001AFB5E /* ElevatorStateView.swift */,
+				DF7B8CE322CE1F7500D6EF93 /* ButtonWithCircleIcon.swift */,
 			);
 			path = "View elements";
 			sourceTree = "<group>";
@@ -246,10 +255,12 @@
 			files = (
 				DF5DF3AE22CE17900048DD69 /* UICircleView.swift in Sources */,
 				DF9F699C22CA014800819A1D /* ApplicationCoordinatorProtocol.swift in Sources */,
+				DF7B8CE422CE1F7500D6EF93 /* ButtonWithCircleIcon.swift in Sources */,
 				DF9F69A122CA058F00819A1D /* SearchViewController.swift in Sources */,
 				DF57F0AB22CB48BA001AFB5E /* SearchViewModel.swift in Sources */,
 				DFBD02E222CA802400244D08 /* ElevatorModel.swift in Sources */,
 				DF9F699F22CA021300819A1D /* MapViewController.swift in Sources */,
+				DF7B8CE222CE1D5B00D6EF93 /* ReportElevatorViewModel.swift in Sources */,
 				DF9F699A22C9FF1600819A1D /* Coordinator.swift in Sources */,
 				DFBD02ED22CA9F8B00244D08 /* CloseView.swift in Sources */,
 				DF9F699822C9FEC300819A1D /* ApplicationCoordinator.swift in Sources */,
@@ -260,6 +271,7 @@
 				DF7A658E22C9410100736179 /* SceneDelegate.swift in Sources */,
 				DF5DF3AB22CE15BC0048DD69 /* MapViewModel.swift in Sources */,
 				DFBD02E622CA811D00244D08 /* ElevatorDetailViewModel.swift in Sources */,
+				DF7B8CE022CE1D4E00D6EF93 /* ReportElevatorView.swift in Sources */,
 				DFBD02E422CA80E800244D08 /* ElevatorDetailView.swift in Sources */,
 				DF57F0A422CB3BCB001AFB5E /* ElevatorStateView.swift in Sources */,
 			);

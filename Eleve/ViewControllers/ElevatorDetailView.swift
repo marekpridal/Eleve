@@ -97,7 +97,7 @@ final class ElevatorDetailView : View {
                 .padding(.bottom, 15)
             }
         }
-        .padding(EdgeInsets(top: 25, leading: 20, bottom: 0, trailing: 0))
+        .padding(.leading, 20)
     }
 }
 

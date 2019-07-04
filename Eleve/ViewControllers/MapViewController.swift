@@ -71,12 +71,10 @@ final class MapViewController: UIViewController {
         mapView.showsUserLocation = true
         mapView.showsBuildings = true
         mapView.delegate = self
-        
-        #if DEBUG
+
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: 50.100474, longitude: 14.393111)
         mapView.addAnnotation(annotation)
-        #endif
     }
     
     private func setup(searchViewController: SearchViewController) {
@@ -122,17 +120,16 @@ final class MapViewController: UIViewController {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.requestWhenInUseAuthorization()
             switch CLLocationManager.authorizationStatus() {
-            case .notDetermined, .restricted, .denied:
-                print(#function, "No access")
-                
             case .authorizedAlways, .authorizedWhenInUse:
                 print(#function, "Access")
                 locationAccessAllowed()
-            @unknown default:
-                break
+            default:
+                print(#function, "No access")
+                locationAccessDisallowed()
             }
         } else {
             print("Location services are not enabled")
+            locationAccessDisallowed()
         }
     }
     
@@ -141,6 +138,10 @@ final class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestLocation()
         locationManager.allowsBackgroundLocationUpdates = false
+    }
+    
+    private func locationAccessDisallowed() {
+        center(CLLocationCoordinate2D(latitude: 50.100474, longitude: 14.393111), mapView: mapView)
     }
 }
 

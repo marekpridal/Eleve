@@ -18,6 +18,7 @@ final class MapViewController: UIViewController {
     private let floatingPanel = FloatingPanelController()
     private let mapView = MKMapView()
     private let searchViewController = SearchViewController(viewModel: SearchViewModel())
+    private let avatarView = UICircleView()
     private var detailPanel: FloatingPanelController?
     private let locationManager = CLLocationManager()
     
@@ -36,6 +37,7 @@ final class MapViewController: UIViewController {
         setup(mapView: mapView)
         setup(searchViewController: searchViewController)
         setup(floatingPanel: floatingPanel, searchViewController: searchViewController)
+        setup(avatarView: avatarView)
         
         getLocation()
     }
@@ -77,6 +79,18 @@ final class MapViewController: UIViewController {
         
         floatingPanel.addPanel(toParent: self)
         floatingPanel.move(to: .tip, animated: true)
+    }
+    
+    private func setup(avatarView: UICircleView) {
+        avatarView.setup(image: UIImage(named: "debugAvatar")!)
+        avatarView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(avatarView)
+        NSLayoutConstraint.activate([
+            avatarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 21),
+            avatarView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            avatarView.heightAnchor.constraint(equalToConstant: 28),
+            avatarView.widthAnchor.constraint(equalToConstant: 28)
+        ])
     }
     
     private func center(_ coordinates: CLLocationCoordinate2D, mapView: MKMapView) {

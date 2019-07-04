@@ -16,6 +16,7 @@
 		DF57F0A922CB488D001AFB5E /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = DF57F0A822CB488D001AFB5E /* RxDataSources */; };
 		DF57F0AB22CB48BA001AFB5E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57F0AA22CB48BA001AFB5E /* SearchViewModel.swift */; };
 		DF5DF3AB22CE15BC0048DD69 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DF3AA22CE15BC0048DD69 /* MapViewModel.swift */; };
+		DF5DF3AE22CE17900048DD69 /* UICircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DF3AD22CE17900048DD69 /* UICircleView.swift */; };
 		DF7A658C22C9410100736179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A658B22C9410100736179 /* AppDelegate.swift */; };
 		DF7A658E22C9410100736179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A658D22C9410100736179 /* SceneDelegate.swift */; };
 		DF7A659522C9410200736179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7A659422C9410200736179 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		DF57F0A322CB3BCB001AFB5E /* ElevatorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorStateView.swift; sourceTree = "<group>"; };
 		DF57F0AA22CB48BA001AFB5E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		DF5DF3AA22CE15BC0048DD69 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		DF5DF3AD22CE17900048DD69 /* UICircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICircleView.swift; sourceTree = "<group>"; };
 		DF7A658822C9410100736179 /* Eleve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eleve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A658B22C9410100736179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF7A658D22C9410100736179 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF5DF3AC22CE177E0048DD69 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				DF5DF3AD22CE17900048DD69 /* UICircleView.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		DF7A657F22C9410000736179 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		DF7A658A22C9410100736179 /* Eleve */ = {
 			isa = PBXGroup;
 			children = (
+				DF5DF3AC22CE177E0048DD69 /* UIView */,
 				DFBD02E722CA8A6500244D08 /* View elements */,
 				DFBD02E022CA800B00244D08 /* Model */,
 				DF9F699D22CA01FA00819A1D /* ViewControllers */,
@@ -233,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF5DF3AE22CE17900048DD69 /* UICircleView.swift in Sources */,
 				DF9F699C22CA014800819A1D /* ApplicationCoordinatorProtocol.swift in Sources */,
 				DF9F69A122CA058F00819A1D /* SearchViewController.swift in Sources */,
 				DF57F0AB22CB48BA001AFB5E /* SearchViewModel.swift in Sources */,

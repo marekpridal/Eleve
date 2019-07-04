@@ -15,6 +15,7 @@
 		DF57F0A722CB488D001AFB5E /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = DF57F0A622CB488D001AFB5E /* Differentiator */; };
 		DF57F0A922CB488D001AFB5E /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = DF57F0A822CB488D001AFB5E /* RxDataSources */; };
 		DF57F0AB22CB48BA001AFB5E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57F0AA22CB48BA001AFB5E /* SearchViewModel.swift */; };
+		DF5DF3AB22CE15BC0048DD69 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DF3AA22CE15BC0048DD69 /* MapViewModel.swift */; };
 		DF7A658C22C9410100736179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A658B22C9410100736179 /* AppDelegate.swift */; };
 		DF7A658E22C9410100736179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A658D22C9410100736179 /* SceneDelegate.swift */; };
 		DF7A659522C9410200736179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7A659422C9410200736179 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		DF2BD74E22CA21AF00D949CA /* ElevatorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorDetailViewController.swift; sourceTree = "<group>"; };
 		DF57F0A322CB3BCB001AFB5E /* ElevatorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorStateView.swift; sourceTree = "<group>"; };
 		DF57F0AA22CB48BA001AFB5E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		DF5DF3AA22CE15BC0048DD69 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		DF7A658822C9410100736179 /* Eleve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eleve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A658B22C9410100736179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF7A658D22C9410100736179 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				DFBD02E322CA80E800244D08 /* ElevatorDetailView.swift */,
 				DFBD02E522CA811D00244D08 /* ElevatorDetailViewModel.swift */,
 				DF57F0AA22CB48BA001AFB5E /* SearchViewModel.swift */,
+				DF5DF3AA22CE15BC0048DD69 /* MapViewModel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				DFBD02EB22CA97A700244D08 /* CircleView.swift in Sources */,
 				DF7A658C22C9410100736179 /* AppDelegate.swift in Sources */,
 				DF7A658E22C9410100736179 /* SceneDelegate.swift in Sources */,
+				DF5DF3AB22CE15BC0048DD69 /* MapViewModel.swift in Sources */,
 				DFBD02E622CA811D00244D08 /* ElevatorDetailViewModel.swift in Sources */,
 				DFBD02E422CA80E800244D08 /* ElevatorDetailView.swift in Sources */,
 				DF57F0A422CB3BCB001AFB5E /* ElevatorStateView.swift in Sources */,

@@ -32,7 +32,7 @@ final class ApplicationCoordinator: Coordinator {
     }
     
     func showMapView() {
-        let mapViewController = MapViewController()
+        let mapViewController = MapViewController(viewModel: MapViewModel(delegate: self))
         rootViewController.pushViewController(mapViewController, animated: true)
     }
     
@@ -40,5 +40,23 @@ final class ApplicationCoordinator: Coordinator {
         let applicationCoordinator = ApplicationCoordinator(window: window, rootViewController: UINavigationController())
         applicationCoordinator.start()
         return applicationCoordinator
+    }
+}
+
+extension ApplicationCoordinator: MapViewModelDelegate {
+    func navigate(elevator: ElevatorModel) {
+        // TODO
+    }
+    
+    func report(elevator: ElevatorModel) {
+        // TODO
+    }
+    
+    func showImageDetail(_ image: UIImage) {
+        // TODO
+    }
+    
+    func openSettings() {
+        
     }
 }

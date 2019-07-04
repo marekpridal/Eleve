@@ -44,14 +44,16 @@ final class ElevatorDetailView : View {
                 Spacer()
                 Group {
                     Button(action: { [weak self] in
-                        self?.viewModel.delegate?.navigate()
+                        guard let self = self else { return }
+                        self.viewModel.delegate?.navigate(elevator: self.viewModel.elevator)
                     }, label: {
                         RoundedView(title: "NAVIGATE", color: Color("Blue"), icon: Image(systemName: "arrow.up"))
                     })
                 }
                 Spacer()
                 Button(action: { [weak self] in
-                    self?.viewModel.delegate?.report()
+                    guard let self = self else { return }
+                    self.viewModel.delegate?.report(elevator: self.viewModel.elevator)
                 }, label: {
                     RoundedView(title: "REPORT", color: Color("Red"), icon: Image(systemName: "arrow.up"))
                 })

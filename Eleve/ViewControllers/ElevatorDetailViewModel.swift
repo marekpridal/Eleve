@@ -11,8 +11,8 @@ import UIKit
 
 protocol ElevatorDetailViewModelDelegate: class {
     func dismiss()
-    func navigate()
-    func report()
+    func navigate(elevator: ElevatorModel)
+    func report(elevator: ElevatorModel)
     func showImageDetail(_ image: UIImage)
 }
 

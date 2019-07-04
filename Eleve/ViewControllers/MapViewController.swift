@@ -13,11 +13,22 @@ import SwiftUI
 
 final class MapViewController: UIViewController {
     
+    let viewModel: MapViewModel
+    
     private let floatingPanel = FloatingPanelController()
     private let mapView = MKMapView()
     private let searchViewController = SearchViewController(viewModel: SearchViewModel())
     private var detailPanel: FloatingPanelController?
     private let locationManager = CLLocationManager()
+    
+    init(viewModel: MapViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -208,15 +219,15 @@ extension MapViewController: ElevatorDetailViewModelDelegate {
         }
     }
     
-    func navigate() {
-        // TODO
+    func navigate(elevator: ElevatorModel) {
+        viewModel.delegate?.navigate(elevator: elevator)
     }
     
-    func report() {
-        // TODO
+    func report(elevator: ElevatorModel) {
+        viewModel.delegate?.report(elevator: elevator)
     }
     
     func showImageDetail(_ image: UIImage) {
-        // TODO
+        viewModel.delegate?.showImageDetail(image)
     }
 }

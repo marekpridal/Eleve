@@ -40,7 +40,7 @@ final class ReportElevatorView : View {
 #if DEBUG
 struct ReportElevatorView_Previews : PreviewProvider {
     static var previews: some View {
-        ReportElevatorView(viewModel: ReportElevatorViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: nil))
+        ReportElevatorView(viewModel: ReportElevatorViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35), delegate: nil))
     }
 }
 #endif

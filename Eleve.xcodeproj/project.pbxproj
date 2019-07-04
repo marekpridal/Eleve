@@ -20,6 +20,7 @@
 		DF5B89A822CE32260064B5CB /* TitleAndSubtitleWithSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B89A722CE32260064B5CB /* TitleAndSubtitleWithSwitch.swift */; };
 		DF5B89AA22CE33E10064B5CB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B89A922CE33E10064B5CB /* SettingsView.swift */; };
 		DF5B89AC22CE33F40064B5CB /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B89AB22CE33F40064B5CB /* SettingsViewModel.swift */; };
+		DF5CDA2222CE641800E04EAF /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CDA2122CE641800E04EAF /* KeyValueView.swift */; };
 		DF5DF3AB22CE15BC0048DD69 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DF3AA22CE15BC0048DD69 /* MapViewModel.swift */; };
 		DF5DF3AE22CE17900048DD69 /* UICircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DF3AD22CE17900048DD69 /* UICircleView.swift */; };
 		DF7A658C22C9410100736179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A658B22C9410100736179 /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 		DF5B89A722CE32260064B5CB /* TitleAndSubtitleWithSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndSubtitleWithSwitch.swift; sourceTree = "<group>"; };
 		DF5B89A922CE33E10064B5CB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF5B89AB22CE33F40064B5CB /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		DF5CDA2122CE641800E04EAF /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
 		DF5DF3AA22CE15BC0048DD69 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		DF5DF3AD22CE17900048DD69 /* UICircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICircleView.swift; sourceTree = "<group>"; };
 		DF7A658822C9410100736179 /* Eleve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eleve.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 				DF7B8CE322CE1F7500D6EF93 /* ButtonWithCircleIcon.swift */,
 				DF5B89A322CE297A0064B5CB /* ElevatorCellViewRepresentable.swift */,
 				DF5B89A722CE32260064B5CB /* TitleAndSubtitleWithSwitch.swift */,
+				DF5CDA2122CE641800E04EAF /* KeyValueView.swift */,
 			);
 			path = "View elements";
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				DF5B89A422CE297A0064B5CB /* ElevatorCellViewRepresentable.swift in Sources */,
 				DF9F69A122CA058F00819A1D /* SearchViewController.swift in Sources */,
 				DF57F0AB22CB48BA001AFB5E /* SearchViewModel.swift in Sources */,
+				DF5CDA2222CE641800E04EAF /* KeyValueView.swift in Sources */,
 				DFBD02E222CA802400244D08 /* ElevatorModel.swift in Sources */,
 				DF9F699F22CA021300819A1D /* MapViewController.swift in Sources */,
 				DF7B8CE222CE1D5B00D6EF93 /* ReportElevatorViewModel.swift in Sources */,

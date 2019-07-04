@@ -50,7 +50,7 @@ extension ApplicationCoordinator: MapViewModelDelegate {
     }
     
     func report(elevator: ElevatorModel) {
-        let report = UIHostingController(rootView: ReportElevatorView(viewModel: ReportElevatorViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: self)))        
+        let report = UIHostingController(rootView: ReportElevatorView(viewModel: ReportElevatorViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35), delegate: self)))        
         rootViewController.present(UINavigationController(rootViewController: report), animated: true, completion: nil)
     }
     

@@ -87,8 +87,14 @@ final class ElevatorDetailView : View {
                         Text("INFORMATION")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
+                        VStack(spacing: 10) {
+                            KeyValueView(key: "VEHICLE_TYPE", value: viewModel.elevator.type)
+                            KeyValueView(key: "DURATION", value: viewModel.elevator.formattedDuration)
+                        }
+                        .padding(.trailing, 20)
                     }
                 }
+                .padding(.bottom, 15)
             }
         }
         .padding(EdgeInsets(top: 25, leading: 20, bottom: 0, trailing: 0))
@@ -98,7 +104,7 @@ final class ElevatorDetailView : View {
 #if DEBUG
 struct ElevatorDetailView_Previews : PreviewProvider {
     static var previews: some View {
-        ElevatorDetailView(viewModel: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: nil))
+        ElevatorDetailView(viewModel: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35), delegate: nil))
     }
 }
 #endif

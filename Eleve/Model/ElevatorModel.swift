@@ -14,4 +14,12 @@ struct ElevatorModel {
     let lastUpdate: Date
     let type: String
     let duration: TimeInterval
+    
+    var formattedDuration: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute, .second ]
+        formatter.unitsStyle = .full
+        formatter.zeroFormattingBehavior = [ .default ]
+        return formatter.string(from: duration)!
+    }
 }

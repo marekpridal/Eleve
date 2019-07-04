@@ -57,7 +57,7 @@ final class SearchViewController: UIViewController {
     private func setupDateSources() {
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(configureCell: { (model, tableView, indexPath, value) -> UIElevatorTableViewCell in
             let cell = UIElevatorTableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "UIElevatorTableViewCell")
-            cell.setup(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000))
+            cell.setup(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35))
             return cell
         })
         

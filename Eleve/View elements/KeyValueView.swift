@@ -30,7 +30,7 @@ struct KeyValueView : View {
 #if DEBUG
 struct KeyValueView_Previews : PreviewProvider {
     static var previews: some View {
-        KeyValueView(key: "VEHICLE_TYPE", value: "TYPE_ELEVATOR")
+        KeyValueView(key: "VEHICLE_TYPE", value: "Výtah")
     }
 }
 #endif

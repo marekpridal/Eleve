@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  Eleve
+
+  Created by Marek Pridal on 04/07/2019.
+  Copyright © 2019 Marek Pridal. All rights reserved.
+*/
+
+// MARK: - Elevator detail
+"NAVIGATE" = "Navigovat";
+"REPORT" = "Nahlásit";
+"STATES" = "Stav";
+"INFORMATION" = "Informace";
+"VEHICLE_TYPE" = "Typ zařízení";
+"DURATION" = "Doba jízdy";
+
+// MARK: - Settings
+"FAVORITE_STATIONS_STATES_TITLE" = "Stav oblíbených stanic";
+"FAVORITE_STATIONS_STATES_SUBTITLE" = "Nechte si oznamovat stav vašich oblíbených stanic";
+"USER_ACTIVITY_TITLE" = "Aktivity uživatelů";
+"USER_ACTIVITY_SUBTITLE" = "Nahlášené stavy oblíbených stanic";
+"RECOMMEND_IMPROVEMENT" = "Máte nápad na zlepšení?";
+"DELETE_ALL_SHARED_DATA" = "Vymazat všechna sdílená data";
+"SETTINGS_TITLE" = "Nastavení";
+
+// MARK: - Report
+"ELEVATOR_HEADER" = "Zařízení";
+"REPORT_TITLE" = "Nahlášení";
+"DISMISS" = "Zavřít";
+"BROKEN_ELEVATOR" = "Nefunkční zařízení";
+"WRONG_STATUS" = "Špatné nahlášení";
+
+// MARK: - ElevatorStateView
+"WORKING" = "Funkční";
+"DOESNT_WORK" = "Nefunkční";

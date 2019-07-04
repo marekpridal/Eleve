@@ -11,8 +11,8 @@ import SwiftUI
 struct TitleAndSubtitleWithSwitch : View {
     
     @State var switchValue: Bool
-    let title: String
-    let subtitle: String
+    let title: LocalizedStringKey
+    let subtitle: LocalizedStringKey
     
     var body: some View {
         HStack {

@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  Eleve
+
+  Created by Marek Pridal on 04/07/2019.
+  Copyright © 2019 Marek Pridal. All rights reserved.
+*/
+
+
+// MARK: - Elevator detail
+"NAVIGATE" = "Navigate";
+"REPORT" = "Report";
+"STATES" = "State";
+"INFORMATION" = "Informations";
+"VEHICLE_TYPE" = "Vehicle type";
+"DURATION" = "Duration";
+
+// MARK: - Settings
+"FAVORITE_STATIONS_STATES_TITLE" = "State of favorite stations";
+"FAVORITE_STATIONS_STATES_SUBTITLE" = "Let us send you notifications about your favorite stations";
+"USER_ACTIVITY_TITLE" = "User activity";
+"USER_ACTIVITY_SUBTITLE" = "Report states of favorite stations";
+"RECOMMEND_IMPROVEMENT" = "Recommend new feature";
+"DELETE_ALL_SHARED_DATA" = "Delete all shared data";
+"SETTINGS_TITLE" = "Settings";
+
+// MARK: - Report
+"ELEVATOR_HEADER" = "Vehicle";
+"REPORT_TITLE" = "Report";
+"DISMISS" = "Dismiss";
+"BROKEN_ELEVATOR" = "Vehicle is broken";
+"WRONG_STATUS" = "Reported state is not current";
+
+// MARK: - ElevatorStateView
+"WORKING" = "Working";
+"DOESNT_WORK" = "Doesn't work";

@@ -20,6 +20,8 @@ final class ReportElevatorView : View {
             Text("ELEVATOR_HEADER")
                 .font(.system(size: 16))
                 .fontWeight(.semibold)
+            ElevatorCellViewRepresentable(elevator: viewModel.elevator)
+            .frame(height: 70)
             Divider()
             ButtonWithCircleIcon(image: Image(systemName: "exclamationmark.bubble"), color: Color("Red"), title: "BROKEN_ELEVATOR")
             ButtonWithCircleIcon(image: Image(systemName: "exclamationmark"), color: Color("Red"), title: "WRONG_STATUS")

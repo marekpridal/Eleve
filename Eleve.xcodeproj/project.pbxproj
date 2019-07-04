@@ -15,6 +15,7 @@
 		DF57F0A722CB488D001AFB5E /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = DF57F0A622CB488D001AFB5E /* Differentiator */; };
 		DF57F0A922CB488D001AFB5E /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = DF57F0A822CB488D001AFB5E /* RxDataSources */; };
 		DF57F0AB22CB48BA001AFB5E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57F0AA22CB48BA001AFB5E /* SearchViewModel.swift */; };
+		DF5B89A422CE297A0064B5CB /* ElevatorCellViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B89A322CE297A0064B5CB /* ElevatorCellViewRepresentable.swift */; };
 		DF5DF3AB22CE15BC0048DD69 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DF3AA22CE15BC0048DD69 /* MapViewModel.swift */; };
 		DF5DF3AE22CE17900048DD69 /* UICircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DF3AD22CE17900048DD69 /* UICircleView.swift */; };
 		DF7A658C22C9410100736179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A658B22C9410100736179 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		DF7B8CE022CE1D4E00D6EF93 /* ReportElevatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B8CDF22CE1D4D00D6EF93 /* ReportElevatorView.swift */; };
 		DF7B8CE222CE1D5B00D6EF93 /* ReportElevatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B8CE122CE1D5B00D6EF93 /* ReportElevatorViewModel.swift */; };
 		DF7B8CE422CE1F7500D6EF93 /* ButtonWithCircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B8CE322CE1F7500D6EF93 /* ButtonWithCircleIcon.swift */; };
+		DF7B8CE622CE25B400D6EF93 /* UIElevatorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B8CE522CE25B400D6EF93 /* UIElevatorCellView.swift */; };
 		DF9F699822C9FEC300819A1D /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F699722C9FEC300819A1D /* ApplicationCoordinator.swift */; };
 		DF9F699A22C9FF1600819A1D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F699922C9FF1600819A1D /* Coordinator.swift */; };
 		DF9F699C22CA014800819A1D /* ApplicationCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F699B22CA014800819A1D /* ApplicationCoordinatorProtocol.swift */; };
@@ -42,6 +44,7 @@
 		DF2BD74E22CA21AF00D949CA /* ElevatorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorDetailViewController.swift; sourceTree = "<group>"; };
 		DF57F0A322CB3BCB001AFB5E /* ElevatorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorStateView.swift; sourceTree = "<group>"; };
 		DF57F0AA22CB48BA001AFB5E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		DF5B89A322CE297A0064B5CB /* ElevatorCellViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorCellViewRepresentable.swift; sourceTree = "<group>"; };
 		DF5DF3AA22CE15BC0048DD69 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		DF5DF3AD22CE17900048DD69 /* UICircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICircleView.swift; sourceTree = "<group>"; };
 		DF7A658822C9410100736179 /* Eleve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eleve.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +56,7 @@
 		DF7B8CDF22CE1D4D00D6EF93 /* ReportElevatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportElevatorView.swift; sourceTree = "<group>"; };
 		DF7B8CE122CE1D5B00D6EF93 /* ReportElevatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportElevatorViewModel.swift; sourceTree = "<group>"; };
 		DF7B8CE322CE1F7500D6EF93 /* ButtonWithCircleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithCircleIcon.swift; sourceTree = "<group>"; };
+		DF7B8CE522CE25B400D6EF93 /* UIElevatorCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElevatorCellView.swift; sourceTree = "<group>"; };
 		DF9F699722C9FEC300819A1D /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		DF9F699922C9FF1600819A1D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DF9F699B22CA014800819A1D /* ApplicationCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorProtocol.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				DF5DF3AD22CE17900048DD69 /* UICircleView.swift */,
+				DF7B8CE522CE25B400D6EF93 /* UIElevatorCellView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				DFBD02EC22CA9F8B00244D08 /* CloseView.swift */,
 				DF57F0A322CB3BCB001AFB5E /* ElevatorStateView.swift */,
 				DF7B8CE322CE1F7500D6EF93 /* ButtonWithCircleIcon.swift */,
+				DF5B89A322CE297A0064B5CB /* ElevatorCellViewRepresentable.swift */,
 			);
 			path = "View elements";
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 				DF5DF3AE22CE17900048DD69 /* UICircleView.swift in Sources */,
 				DF9F699C22CA014800819A1D /* ApplicationCoordinatorProtocol.swift in Sources */,
 				DF7B8CE422CE1F7500D6EF93 /* ButtonWithCircleIcon.swift in Sources */,
+				DF5B89A422CE297A0064B5CB /* ElevatorCellViewRepresentable.swift in Sources */,
 				DF9F69A122CA058F00819A1D /* SearchViewController.swift in Sources */,
 				DF57F0AB22CB48BA001AFB5E /* SearchViewModel.swift in Sources */,
 				DFBD02E222CA802400244D08 /* ElevatorModel.swift in Sources */,
@@ -263,6 +270,7 @@
 				DF7B8CE222CE1D5B00D6EF93 /* ReportElevatorViewModel.swift in Sources */,
 				DF9F699A22C9FF1600819A1D /* Coordinator.swift in Sources */,
 				DFBD02ED22CA9F8B00244D08 /* CloseView.swift in Sources */,
+				DF7B8CE622CE25B400D6EF93 /* UIElevatorCellView.swift in Sources */,
 				DF9F699822C9FEC300819A1D /* ApplicationCoordinator.swift in Sources */,
 				DFBD02E922CA8A7900244D08 /* RoundedView.swift in Sources */,
 				DF2BD74F22CA21AF00D949CA /* ElevatorDetailViewController.swift in Sources */,

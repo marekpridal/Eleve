@@ -8,23 +8,27 @@
 
 import SwiftUI
 
-struct ElevatorDetailView : View {
-    let model: ElevatorDetailViewModel
+final class ElevatorDetailView : View {
+    let viewModel: ElevatorDetailViewModel
+    
+    init(viewModel: ElevatorDetailViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack() {
                 VStack(alignment: .leading) {
-                    Text(model.elevator.name)
+                    Text(viewModel.elevator.name)
                         .font(.system(size: 20))
                         .fontWeight(.semibold)
-                    Text(model.elevator.status)
+                    Text(viewModel.elevator.status)
                         .font(.system(size: 14))
                         .fontWeight(.medium)
                 }
                 Spacer()
-                Button(action: {
-                    print("Button")
+                Button(action: { [weak self] in
+                    self?.viewModel.delegate?.dismiss()
                 }, label: {
                     CloseView()
                 })
@@ -32,22 +36,22 @@ struct ElevatorDetailView : View {
             }
             Divider()
             HStack(alignment: VerticalAlignment.bottom) {
-                Button(action: {
-                    print("Button")
+                Button(action: { [weak self] in
+                    self?.viewModel.favorite()
                 }) {
                     CircleView(icon: Image(systemName: "star.fill"), color: Color("Orange"))
                 }
                 Spacer()
                 Group {
-                    Button(action: {
-                        print("Button")
+                    Button(action: { [weak self] in
+                        self?.viewModel.delegate?.navigate()
                     }, label: {
                         RoundedView(title: "NAVIGATE", color: Color("Blue"), icon: Image(systemName: "arrow.up"))
                     })
                 }
                 Spacer()
-                Button(action: {
-                    print("Button")
+                Button(action: { [weak self] in
+                    self?.viewModel.delegate?.report()
                 }, label: {
                     RoundedView(title: "REPORT", color: Color("Red"), icon: Image(systemName: "arrow.up"))
                 })
@@ -56,9 +60,13 @@ struct ElevatorDetailView : View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(1...50) { element in
-                        Image(systemName: "selection.pin.in.out")
-                        .frame(width: 139, height: 84, alignment: Alignment.center)
-                        .background(Rectangle().fill(Color("Blue")).cornerRadius(6))
+                        Button(action: {
+                            //self?.viewModel.delegate?.showImageDetail(element.image)
+                        }) {
+                            Image(systemName: "selection.pin.in.out")
+                                .frame(width: 139, height: 84, alignment: Alignment.center)
+                                .background(Rectangle().fill(Color("Blue")).cornerRadius(6))
+                        }
                     }
                 }
             }
@@ -79,7 +87,7 @@ struct ElevatorDetailView : View {
 #if DEBUG
 struct ElevatorDetailView_Previews : PreviewProvider {
     static var previews: some View {
-        ElevatorDetailView(model: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: nil))
+        ElevatorDetailView(viewModel: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: nil))
     }
 }
 #endif

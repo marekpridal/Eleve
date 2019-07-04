@@ -186,7 +186,7 @@ extension MapViewController: MKMapViewDelegate {
     private func showDetail() {
         self.detailPanel?.removePanelFromParent(animated: true)
         
-        let detailViewController: UIViewController = UIHostingController(rootView: ElevatorDetailView(model: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: nil)))
+        let detailViewController: UIViewController = UIHostingController(rootView: ElevatorDetailView(viewModel: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35_000), delegate: self)))
         
         self.detailPanel = FloatingPanelController()
         self.detailPanel?.delegate = self
@@ -197,5 +197,26 @@ extension MapViewController: MKMapViewDelegate {
         detailPanel?.addPanel(toParent: self, animated: true)
         
         floatingPanel.move(to: .tip, animated: false)
+    }
+}
+
+extension MapViewController: ElevatorDetailViewModelDelegate {
+    func dismiss() {
+        detailPanel?.removePanelFromParent(animated: true)
+        mapView.selectedAnnotations.forEach { (annotation) in
+            mapView.deselectAnnotation(annotation, animated: true)
+        }
+    }
+    
+    func navigate() {
+        // TODO
+    }
+    
+    func report() {
+        // TODO
+    }
+    
+    func showImageDetail(_ image: UIImage) {
+        // TODO
     }
 }

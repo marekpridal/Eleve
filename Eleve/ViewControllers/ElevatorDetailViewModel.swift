@@ -7,9 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ElevatorDetailViewModelDelegate: class {
-    
+    func dismiss()
+    func navigate()
+    func report()
+    func showImageDetail(_ image: UIImage)
 }
 
 final class ElevatorDetailViewModel {
@@ -20,5 +24,9 @@ final class ElevatorDetailViewModel {
     init(elevator: ElevatorModel, delegate: ElevatorDetailViewModelDelegate?) {
         self.delegate = delegate
         self.elevator = elevator
+    }
+    
+    func favorite() {
+        
     }
 }

@@ -13,25 +13,27 @@ struct SettingsView : View {
     let viewModel: SettingsViewModel
     
     var body: some View {
-        VStack {
-            TitleAndSubtitleWithSwitch(switchValue: true, title: "FAVORITE_STATIONS_STATES_TITLE", subtitle: "FAVORITE_STATIONS_STATES_SUBTITLE")
-            .padding(.bottom, 25)
-            TitleAndSubtitleWithSwitch(switchValue: false, title: "USER_ACTIVITY_TITLE", subtitle: "USER_ACTIVITY_SUBTITLE")
-            .padding(.bottom, 25)
-            Divider()
-            Button(action: {
-                // TODO
-            }) {
-                ButtonWithCircleIcon(image: Image(systemName: "questionmark"), color: Color("Blue"), title: "RECOMMEND_IMPROVEMENT")
+        ScrollView {
+            VStack {
+                TitleAndSubtitleWithSwitch(switchValue: true, title: "FAVORITE_STATIONS_STATES_TITLE", subtitle: "FAVORITE_STATIONS_STATES_SUBTITLE")
+                    .padding(.bottom, 25)
+                TitleAndSubtitleWithSwitch(switchValue: false, title: "USER_ACTIVITY_TITLE", subtitle: "USER_ACTIVITY_SUBTITLE")
+                    .padding(.bottom, 25)
+                Divider()
+                Button(action: {
+                    // TODO
+                }) {
+                    ButtonWithCircleIcon(image: Image(systemName: "questionmark"), color: Color("Blue"), title: "RECOMMEND_IMPROVEMENT")
+                }
+                Button(action: {
+                    // TODO
+                }) {
+                    ButtonWithCircleIcon(image: Image(systemName: "trash"), color: Color("Red"), title: "DELETE_ALL_SHARED_DATA")
+                }
+                Spacer()
             }
-            Button(action: {
-                // TODO
-            }) {
-                ButtonWithCircleIcon(image: Image(systemName: "trash"), color: Color("Red"), title: "DELETE_ALL_SHARED_DATA")
-            }
-            Spacer()
+            .padding()            
         }
-        .padding()
         .navigationBarTitle("SETTINGS_TITLE", displayMode: .large)
     }
 }

@@ -16,32 +16,34 @@ final class ReportElevatorView : View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("ELEVATOR_HEADER")
-                .font(.system(size: 16))
-                .fontWeight(.semibold)
-            ElevatorCellViewRepresentable(elevator: viewModel.elevator)
-            .frame(height: 70)
-            Divider()
-            Button(action: {
-                // TODO
-            }) {
-                ButtonWithCircleIcon(image: Image(systemName: "exclamationmark.bubble"), color: Color("Red"), title: "BROKEN_ELEVATOR")
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text("ELEVATOR_HEADER")
+                    .font(.system(size: 16))
+                    .fontWeight(.semibold)
+                ElevatorCellViewRepresentable(elevator: viewModel.elevator)
+                    .frame(height: 70)
+                Divider()
+                Button(action: {
+                    // TODO
+                }) {
+                    ButtonWithCircleIcon(image: Image(systemName: "exclamationmark.bubble"), color: Color("Red"), title: "BROKEN_ELEVATOR")
+                }
+                Button(action: {
+                    // TODO
+                }) {
+                    ButtonWithCircleIcon(image: Image(systemName: "exclamationmark"), color: Color("Red"), title: "WRONG_STATUS")
+                }
+                Spacer()
             }
-            Button(action: {
-                // TODO
-            }) {
-                ButtonWithCircleIcon(image: Image(systemName: "exclamationmark"), color: Color("Red"), title: "WRONG_STATUS")
-            }
-            Spacer()
+            .padding()
         }
-        .padding()
         .navigationBarTitle("REPORT_TITLE")
-            .navigationBarItems(leading: Button(action: { [weak self] in
-                self?.viewModel.delegate?.dismissReport()
-            }, label: {
-                Text("DISMISS")
-            }))
+        .navigationBarItems(leading: Button(action: { [weak self] in
+            self?.viewModel.delegate?.dismissReport()
+        }, label: {
+            Text("DISMISS")
+        }))
     }
 }
 

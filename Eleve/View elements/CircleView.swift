@@ -19,7 +19,7 @@ struct CircleView : View {
             .accentColor(color)
         }
         .frame(width: 42, height: 42, alignment: .center)
-        .background(Circle().fill(color.opacity(20)))
+        .background(Circle().fill(color.opacity(0.2)))
     }
 }
 

@@ -25,7 +25,7 @@ struct RoundedView : View {
         }
         .padding(EdgeInsets(top: 13, leading: 23, bottom: 13, trailing: 23))
         .background(Rectangle()
-        .fill(color.opacity(90))
+        .fill(color.opacity(0.1))
         .cornerRadius(21))
     }
 }

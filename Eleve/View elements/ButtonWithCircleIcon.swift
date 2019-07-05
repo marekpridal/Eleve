@@ -23,7 +23,7 @@ struct ButtonWithCircleIcon : View {
                     .padding(10)
                     .background(
                         Circle()
-                            .fill(color.opacity(20)
+                            .fill(color.opacity(0.2)
                         )
                 )
             }

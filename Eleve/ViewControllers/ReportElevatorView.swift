@@ -23,8 +23,16 @@ final class ReportElevatorView : View {
             ElevatorCellViewRepresentable(elevator: viewModel.elevator)
             .frame(height: 70)
             Divider()
-            ButtonWithCircleIcon(image: Image(systemName: "exclamationmark.bubble"), color: Color("Red"), title: "BROKEN_ELEVATOR")
-            ButtonWithCircleIcon(image: Image(systemName: "exclamationmark"), color: Color("Red"), title: "WRONG_STATUS")
+            Button(action: {
+                // TODO
+            }) {
+                ButtonWithCircleIcon(image: Image(systemName: "exclamationmark.bubble"), color: Color("Red"), title: "BROKEN_ELEVATOR")
+            }
+            Button(action: {
+                // TODO
+            }) {
+                ButtonWithCircleIcon(image: Image(systemName: "exclamationmark"), color: Color("Red"), title: "WRONG_STATUS")
+            }
             Spacer()
         }
         .padding()

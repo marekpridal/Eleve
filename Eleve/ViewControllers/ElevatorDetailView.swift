@@ -49,7 +49,7 @@ final class ElevatorDetailView : View {
                                 guard let self = self else { return }
                                 self.viewModel.delegate?.navigate(elevator: self.viewModel.elevator)
                                 }, label: {
-                                    RoundedView(title: "NAVIGATE", color: Color("Blue"), icon: Image(systemName: "arrow.up"))
+                                    RoundedView(title: "NAVIGATE", color: Color("Blue"), icon: Image(systemName: "location.north.fill"))
                             })
                         }
                         Spacer()
@@ -57,7 +57,7 @@ final class ElevatorDetailView : View {
                             guard let self = self else { return }
                             self.viewModel.delegate?.report(elevator: self.viewModel.elevator)
                             }, label: {
-                                RoundedView(title: "REPORT", color: Color("Red"), icon: Image(systemName: "arrow.up"))
+                                RoundedView(title: "REPORT", color: Color("Red"), icon: Image(systemName: "exclamationmark.bubble"))
                         })
                     }
                     .padding(.trailing, 20)

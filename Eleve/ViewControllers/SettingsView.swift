@@ -19,8 +19,16 @@ struct SettingsView : View {
             TitleAndSubtitleWithSwitch(switchValue: false, title: "USER_ACTIVITY_TITLE", subtitle: "USER_ACTIVITY_SUBTITLE")
             .padding(.bottom, 25)
             Divider()
-            ButtonWithCircleIcon(image: Image(systemName: "questionmark"), color: Color("Blue"), title: "RECOMMEND_IMPROVEMENT")
-            ButtonWithCircleIcon(image: Image(systemName: "trash"), color: Color("Red"), title: "DELETE_ALL_SHARED_DATA")
+            Button(action: {
+                // TODO
+            }) {
+                ButtonWithCircleIcon(image: Image(systemName: "questionmark"), color: Color("Blue"), title: "RECOMMEND_IMPROVEMENT")
+            }
+            Button(action: {
+                // TODO
+            }) {
+                ButtonWithCircleIcon(image: Image(systemName: "trash"), color: Color("Red"), title: "DELETE_ALL_SHARED_DATA")
+            }
             Spacer()
         }
         .padding()

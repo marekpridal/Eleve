@@ -237,7 +237,7 @@ extension MapViewController: MKMapViewDelegate {
     private func showDetail() {
         self.detailPanel?.removePanelFromParent(animated: true)
         
-        let detailViewController: UIViewController = UIHostingController(rootView: ElevatorDetailView(viewModel: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35), delegate: self)))
+        let detailViewController = UIHostingController(rootView: ElevatorDetailView(viewModel: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35), delegate: self)))
         
         self.detailPanel = FloatingPanelController()
         self.detailPanel?.delegate = self
@@ -246,6 +246,8 @@ extension MapViewController: MKMapViewDelegate {
         
         detailPanel?.set(contentViewController: detailViewController)
         detailPanel?.addPanel(toParent: self, animated: true)
+        let scrollView = detailViewController.view.subviews.first { $0.subviews.contains(where: { $0 is UIScrollView }) }?.subviews.first as? UIScrollView
+        detailPanel?.track(scrollView: scrollView)
         
         floatingPanel.move(to: .tip, animated: false)
     }

@@ -147,12 +147,11 @@ final class MapViewController: UIViewController {
 
 extension MapViewController: FloatingPanelControllerDelegate {
     func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
-        switch newCollection.verticalSizeClass {
-        case .compact:
+        if newCollection.verticalSizeClass == .compact || (newCollection.verticalSizeClass == .regular && newCollection.horizontalSizeClass == .regular) {
             floatingPanel.surfaceView.borderWidth = 1.0 / traitCollection.displayScale
             floatingPanel.surfaceView.borderColor = UIColor.black.withAlphaComponent(0.2)
             return SearchPanelLandscapeLayout()
-        default:
+        } else {
             floatingPanel.surfaceView.borderWidth = 0.0
             floatingPanel.surfaceView.borderColor = nil
             return nil

@@ -29,7 +29,7 @@ struct ButtonWithCircleIcon : View {
             }
             .padding(.trailing, 10)
             Text(title)
-                .color(color)
+                .foregroundColor(color)
                 .font(.system(size: 16))
                 .fontWeight(.semibold)
             Spacer()

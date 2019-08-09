@@ -65,7 +65,7 @@ final class ElevatorDetailView : View {
                         HStack {
                             ForEach(1...50) { element in
                                 Button(action: {
-                                    //self?.viewModel.delegate?.showImageDetail(element.image)
+//                                    viewModel.delegate?.showImageDetail(element.image)
                                 }) {
                                     Image(systemName: "selection.pin.in.out")
                                         .frame(width: 139, height: 84, alignment: Alignment.center)
@@ -78,12 +78,12 @@ final class ElevatorDetailView : View {
                         Text("STATES")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
-                        ForEach(1...50) { element in
+                        ForEach((1...50), content: { (element) in
                             ElevatorStateView(elevatorState: ElevatorStateView.ElevatorState(working: Bool.random(), direction: "Z / Na nástupiště", lastUpdate: TimeInterval.random(in: 1000...10_000_000)))
                                 .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 20))
                             Divider()
                                 .padding(.leading, 35)
-                        }
+                        })
                         Text("INFORMATION")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
@@ -108,3 +108,9 @@ struct ElevatorDetailView_Previews : PreviewProvider {
     }
 }
 #endif
+
+extension Int: Identifiable {
+    public var id: Int {
+        return self
+    }
+}

@@ -20,7 +20,7 @@ struct RoundedView : View {
                 icon
                 .accentColor(color)
                 Text(title)
-                .color(color)
+                .foregroundColor(color)
             }
         }
         .padding(EdgeInsets(top: 13, leading: 23, bottom: 13, trailing: 23))

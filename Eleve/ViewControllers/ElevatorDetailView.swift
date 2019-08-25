@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-final class ElevatorDetailView : View {
+struct ElevatorDetailView : View {
     let viewModel: ElevatorDetailViewModel
     
     init(viewModel: ElevatorDetailViewModel) {
@@ -27,8 +27,8 @@ final class ElevatorDetailView : View {
                         .fontWeight(.medium)
                 }
                 Spacer()
-                Button(action: { [weak self] in
-                    self?.viewModel.delegate?.dismiss()
+                Button(action: {
+                    self.viewModel.delegate?.dismiss()
                 }, label: {
                     CloseView()
                 })
@@ -38,23 +38,21 @@ final class ElevatorDetailView : View {
             ScrollView {
                 VStack(spacing: 15) {
                     HStack(alignment: VerticalAlignment.bottom) {
-                        Button(action: { [weak self] in
-                            self?.viewModel.favorite()
+                        Button(action: {
+                            self.viewModel.favorite()
                         }) {
                             CircleView(icon: Image(systemName: "star.fill"), color: Color("Orange"))
                         }
                         Spacer()
                         Group {
-                            Button(action: { [weak self] in
-                                guard let self = self else { return }
+                            Button(action: {
                                 self.viewModel.delegate?.navigate(elevator: self.viewModel.elevator)
                                 }, label: {
                                     RoundedView(title: "NAVIGATE", color: Color("Blue"), icon: Image(systemName: "location.north.fill"))
                             })
                         }
                         Spacer()
-                        Button(action: { [weak self] in
-                            guard let self = self else { return }
+                        Button(action: {
                             self.viewModel.delegate?.report(elevator: self.viewModel.elevator)
                             }, label: {
                                 RoundedView(title: "REPORT", color: Color("Red"), icon: Image(systemName: "exclamationmark.bubble"))

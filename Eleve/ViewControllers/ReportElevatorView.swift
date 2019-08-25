@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-final class ReportElevatorView : View {
+struct ReportElevatorView : View {
     let viewModel: ReportElevatorViewModel
     
     init(viewModel: ReportElevatorViewModel) {
@@ -39,8 +39,8 @@ final class ReportElevatorView : View {
             .padding()
         }
         .navigationBarTitle("REPORT_TITLE")
-        .navigationBarItems(leading: Button(action: { [weak self] in
-            self?.viewModel.delegate?.dismissReport()
+        .navigationBarItems(leading: Button(action: {
+            self.viewModel.delegate?.dismissReport()
         }, label: {
             Text("DISMISS")
         }))

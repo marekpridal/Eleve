@@ -155,15 +155,15 @@
 		DF9F699D22CA01FA00819A1D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DF5B89A922CE33E10064B5CB /* SettingsView.swift */,
-				DF9F699E22CA021300819A1D /* MapViewController.swift */,
-				DF9F69A022CA058F00819A1D /* SearchViewController.swift */,
 				DFBD02E322CA80E800244D08 /* ElevatorDetailView.swift */,
 				DFBD02E522CA811D00244D08 /* ElevatorDetailViewModel.swift */,
-				DF57F0AA22CB48BA001AFB5E /* SearchViewModel.swift */,
+				DF9F699E22CA021300819A1D /* MapViewController.swift */,
 				DF5DF3AA22CE15BC0048DD69 /* MapViewModel.swift */,
 				DF7B8CDF22CE1D4D00D6EF93 /* ReportElevatorView.swift */,
 				DF7B8CE122CE1D5B00D6EF93 /* ReportElevatorViewModel.swift */,
+				DF9F69A022CA058F00819A1D /* SearchViewController.swift */,
+				DF57F0AA22CB48BA001AFB5E /* SearchViewModel.swift */,
+				DF5B89A922CE33E10064B5CB /* SettingsView.swift */,
 				DF5B89AB22CE33F40064B5CB /* SettingsViewModel.swift */,
 			);
 			path = ViewControllers;

@@ -21,7 +21,7 @@ final class MapViewController: UIViewController {
     
     private let floatingPanel = FloatingPanelController()
     private let mapView = MKMapView()
-    private let searchViewController = SearchViewController(viewModel: SearchViewModel())
+    private lazy var searchViewController: SearchViewController = SearchViewController(viewModel: SearchViewModel(delegate: self))
     private let avatarView = UICircleView()
     private var detailPanel: FloatingPanelController?
     private let locationManager = CLLocationManager()
@@ -230,25 +230,7 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        showDetail()
-    }
-    
-    private func showDetail() {
-        self.detailPanel?.removePanelFromParent(animated: true)
-        
-        let detailViewController = UIHostingController(rootView: ElevatorDetailView(viewModel: ElevatorDetailViewModel(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35), delegate: self)))
-        
-        self.detailPanel = FloatingPanelController()
-        self.detailPanel?.delegate = self
-        detailPanel?.surfaceView.shadowHidden = false
-        detailPanel?.surfaceView.cornerRadius = 6.0
-        
-        detailPanel?.set(contentViewController: detailViewController)
-        detailPanel?.addPanel(toParent: self, animated: true)
-        let scrollView = detailViewController.view.subviews.first { $0.subviews.contains(where: { $0 is UIScrollView }) }?.subviews.first as? UIScrollView
-        detailPanel?.track(scrollView: scrollView)
-        
-        floatingPanel.move(to: .tip, animated: false)
+        didSelect(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35))
     }
 }
 
@@ -270,5 +252,25 @@ extension MapViewController: ElevatorDetailViewModelDelegate {
     
     func showImageDetail(_ image: UIImage) {
         viewModel.delegate?.showImageDetail(image)
+    }
+}
+
+extension MapViewController: SearchViewModelDelegate {
+    func didSelect(elevator: ElevatorModel) {
+        self.detailPanel?.removePanelFromParent(animated: true)
+        
+        let detailViewController = UIHostingController(rootView: ElevatorDetailView(viewModel: ElevatorDetailViewModel(elevator: elevator, delegate: self)))
+        
+        self.detailPanel = FloatingPanelController()
+        self.detailPanel?.delegate = self
+        detailPanel?.surfaceView.shadowHidden = false
+        detailPanel?.surfaceView.cornerRadius = 6.0
+        
+        detailPanel?.set(contentViewController: detailViewController)
+        detailPanel?.addPanel(toParent: self, animated: true)
+        let scrollView = detailViewController.view.subviews.first { $0.subviews.contains(where: { $0 is UIScrollView }) }?.subviews.first as? UIScrollView
+        detailPanel?.track(scrollView: scrollView)
+        
+        floatingPanel.move(to: .tip, animated: false)
     }
 }

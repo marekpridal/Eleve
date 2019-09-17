@@ -55,13 +55,25 @@ final class SearchViewController: UIViewController {
     }
     
     private func setupDateSources() {
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(configureCell: { (model, tableView, indexPath, value) -> UIElevatorTableViewCell in
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, ElevatorModel>>(configureCell: { (model, tableView, indexPath, value) -> UIElevatorTableViewCell in
             let cell = UIElevatorTableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "UIElevatorTableViewCell")
-            cell.setup(elevator: ElevatorModel(name: "Dejvická", status: "V provozu", lastUpdate: Date(), type: "Výtah", duration: 35))
+            cell.setup(elevator: value)
             return cell
         })
         
         viewModel.sectionModel.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        
+        tableView
+            .rx
+            .modelSelected(ElevatorModel.self)
+            .asDriver()
+            .drive(onNext: { [weak self] (value) in
+                self?.tableView.indexPathsForSelectedRows?.forEach({ (indexPath) in
+                    self?.tableView.deselectRow(at: indexPath, animated: true)
+                })
+                self?.viewModel.delegate?.didSelect(elevator: value)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setup(searchBar: UISearchBar) {

@@ -47,7 +47,7 @@ final class UIElevatorCellView: UIView {
         coloredView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(coloredView)
         NSLayoutConstraint.activate([
-            coloredView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            coloredView.topAnchor.constraint(greaterThanOrEqualTo: self.topAnchor, constant: 10),
             coloredView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             coloredView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
             coloredView.heightAnchor.constraint(equalToConstant: 40),
@@ -59,23 +59,20 @@ final class UIElevatorCellView: UIView {
         coloredView.addSubview(icon)
         NSLayoutConstraint.activate([
             icon.leadingAnchor.constraint(equalTo: coloredView.leadingAnchor, constant: 7),
-            icon.trailingAnchor.constraint(equalTo: coloredView.trailingAnchor, constant: 7),
+            icon.trailingAnchor.constraint(equalTo: coloredView.trailingAnchor, constant: -7),
             icon.topAnchor.constraint(equalTo: coloredView.topAnchor, constant: 7),
-            icon.bottomAnchor.constraint(equalTo: coloredView.bottomAnchor, constant: 7)
+            icon.bottomAnchor.constraint(equalTo: coloredView.bottomAnchor, constant: -7)
         ])
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .equalSpacing
         stackView.axis = .vertical
         addSubview(stackView)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: coloredView.topAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: coloredView.trailingAnchor, constant: 15),
             stackView.trailingAnchor.constraint(greaterThanOrEqualTo: self.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: coloredView.bottomAnchor)
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(subtitleLabel)
     }

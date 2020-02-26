@@ -91,6 +91,8 @@ final class SearchViewController: UIViewController {
     private func setup(tableView: UITableView, searchBar: UISearchBar) {
         tableView.register(UIElevatorTableViewCell.self, forCellReuseIdentifier: "UIElevatorTableViewCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.estimatedRowHeight = 70
+        tableView.rowHeight = UITableView.automaticDimension
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
